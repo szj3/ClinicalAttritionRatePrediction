@@ -15,3 +15,9 @@ We merged (using lambda) the RUCA numerical code to the original dataset to cate
 Having all the selected features, we converted the zipcodes (using the pyzipcode package) into their corresponding longitude and latitude codes to help with mapping the locations of where the trials took place. We then geocoded and looped all the facilities of each clinical trial using the longitude and latitude coordinates information into a HTML file (using folium package and a marker). The map showcased the map of the United States covered with drop pins of all the locations of the facilities. You can zoom in the map for accuracy. When you hover over the pin, it will show a text box with more information about the facility from the dataset. Because of high memory usage, we decided to visualize clinical trials that were above the median of 7.66019 rather than having all 818 trials on the map. 
 
 When it comes to training our data, we prepare all the libraries to be used. We removed all the null values of the dataset to proceed further with the training and the column we don’t need in ML. We transformed the string data into the numbers for the machine to understand it. 
+
+Files 
+1. "XMLextraction.py": I extracted all the crucial information from all 1300 XML files into onto table, saved as a CSV file. 
+2. "CleanData.py": This file was designated to clean the table by removing null values, standardizing the data, and filtering the trials that were only conducted in the United States.
+3. "FoliumMapping.py": After cleaning the data, I mapped out all the facilities that were labeled as rural.
+4. "PredictionModel.py": Seeks to predict the attrition rate of patients based on specific features from the table. 
